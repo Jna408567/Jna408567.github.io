@@ -39,7 +39,7 @@
         // example: 
         createCollectable(type.steve, 200, 170, 6, 0.7);
         
-        
+        createCollectable(candy.lifesavers, 200, 300, 100,);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
