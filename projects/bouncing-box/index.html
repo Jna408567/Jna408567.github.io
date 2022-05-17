@@ -6,14 +6,14 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 200px;
-			height: 300px;
+			width: 70px;
+			height: 70px;
 			background-color: teal;
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
-			top: 400px;
+			top: 100px;
 			left: 0px;  /* <--- Change me! */
 		}
 		.board{
@@ -47,7 +47,7 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(boardWidth); {
+			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
 			}
 
@@ -60,8 +60,12 @@
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
+
+
 			// TODO 2 - Variable declarations 
-			
+			var positionX = 0;
+			var points = 0;
+			var speed = 10;
 
 			
 			/* 
@@ -70,7 +74,15 @@
 			turn it around! 
 			*/
 			function update() {
-				nameOfFunction(200, 300, 400)
+				// Increase positionX by 10
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
+				if (positionX > boardWidth) {
+					speed = -speed;
+				}
+				if (positionX < 0) {
+					speed = speed * -1;
+				}
 			};
 
 			/* 
@@ -79,8 +91,15 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points);
+				if (speed = speed) {
+					speed += 3;
+				}
+				else if (speed = -speed) {
+					speed -= 3;
+				}
 
 			};
 		})();
